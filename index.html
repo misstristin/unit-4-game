@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Crystal Blackjack</title>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+  <div class="jumbotron bg-info">
+    <h1 class="text-center text-light">Crystal Blackjack</h1>
+    <h2 class="text-center text-dark">Try to match the number, but don't go over!</h2>
+  </div>
+
+  <div class="container">
+
+      <div class="card">
+        <div class="card-header text-center">
+          <h3 class="card-title">This number wins:</h3>
+        </div>
+        <div class="card-body text-center">
+          <p id="computer-pick">???</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header text-center">
+          <h3 class="card-title">Pick your crystals, as many times as you dare!</h3>
+        </div>
+        <div class="card-body text-center" id="jewelBox">
+          <!-- buttons will populate here -->
+        </div>
+      </div>
+
+      <div class="card text-center">
+        <div class="card-header">
+          <h3 class="card-title">Your current score (careful, careful):</h3>
+        </div>
+        <div class="card-body text-center">
+          <span id="choicesToAdd"></span> = <span id="totalAdded"></span>
+        </div>
+      </div>
+ 
+  </div>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+
+
+    // Add code to have the computer guess a random number between 19 and 120
+    
+    var ranNum = Math.ceil((Math.random()*100)+19);
+
+    // jewel object within Array
+
+    var jewels = [{
+                    name: 'jewelOne',
+                    class: 'btn btn-choice btn-success jewel'
+                  },
+                  {
+                    name: 'jewelTwo',
+                    class: 'btn btn-choice btn-danger jewel'
+                   },
+                   {
+                   name: 'jewelThree',
+                   class: 'btn btn-choice btn-primary jewel'                
+                   },
+                   {
+                    name: 'jewelFour',
+                    class: 'btn btn-choice btn-warning jewel'
+                   }];
+     
+    var button, jewelVal, jewelClicked;
+    var clicked = [];
+    var total;
+ 
+
+    // append jewels and give random values
+
+    for (var index in jewels){
+				button = $('<button>');
+        jewelVal = Math.ceil(Math.random()*12);
+				button.attr('data-jewelval', jewelVal);
+        button.attr('class', jewels[index].class);
+        button.attr('id', jewels[index].id);
+				$('#jewelBox').append(button);
+      }
+      
+    // Reveals random winning number and clicked random numbers within jewels
+
+   $(document).on('click', 'button', function() {
+    $('#computer-pick').text(ranNum);
+    jewelClicked = $(this).attr('data-jewelval');
+    $(this).text(jewelClicked);
+    clicked.push(jewelClicked);
+    $('#choicesToAdd').text(clicked);
+
+    // adds the clicked jewels together
+
+    var total = 0;
+    for(index in clicked){
+    total += (parseInt(clicked[index]));
+    $('#totalAdded').text(total);
+    }
+ 
+    
+
+
+
+    
+  
+    
+   
+    
+
+
+    });
+  
+
+    
+    
+
+    
+
+    // var val = $(this).attr('data-value');
+
+
+    // var result = $('#result');
+    
+    // on click event begins game
+
+    
+
+
+  </script>
+
+</body>
+
+</html>
