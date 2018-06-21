@@ -120,24 +120,37 @@
     $('#totalAdded').text(total);
     }
  
+    // clears the game so you can play again - new random numnber, new crystal values
+
+    if (total == ranNum){
+      alert('You did it! Score equals computer!');
+      total = 0;
+      ranNum = Math.ceil((Math.random()*100)+19);
+      $('#computer-pick').text(ranNum);
+      $('#totalAdded').text(total);
+      jewelVal = Math.ceil(Math.random()*12);
+      button.attr('data-jewelval', jewelVal);
+      lastGuess = clicked.length;
+      clicked.splice(0,lastGuess);
+
+      $('#choicesToAdd').text(clicked);
+
+    } else if (total > ranNum){
+      alert('Sorry, you overdid it a bit. Try again.');
+      total = 0;
+      ranNum = Math.ceil((Math.random()*100)+19);
+      $('#computer-pick').text(ranNum);
+      $('#totalAdded').text(total);
+      jewelVal = Math.ceil(Math.random()*12);
+      button.attr('data-jewelval', jewelVal);
+      lastGuess = clicked.length;
+      clicked.splice(0,lastGuess);
+
+      $('#choicesToAdd').text(clicked);
+    }
+
     });
   
-
-    
-    
-
-    
-
-    // var val = $(this).attr('data-value');
-
-
-    // var result = $('#result');
-    
-    // on click event begins game
-
-    
-
-
   </script>
 
 </body>
