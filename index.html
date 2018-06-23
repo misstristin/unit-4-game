@@ -8,55 +8,70 @@
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
 
-  <div class="jumbotron bg-info">
+  <div class="jumbotron bg-info title">
     <h1 class="text-center text-light">Crystal Blackjack</h1>
     <h2 class="text-center text-dark">Try to match the number, but don't go over!</h2>
   </div>
 
-  <div class="container">
+  <div class="container myContainer">
 
-      <div class="card">
-        <div class="card-header text-center">
-          <h3 class="card-title">This number wins:</h3>
-        </div>
-        <div class="card-body text-center">
-          <p id="computer-pick">???</p>
-        </div>
+      <div class="col-sm-12 text-center">
+          <p class="title">This number wins:</p>
       </div>
-
-      <div class="card">
-        <div class="card-header text-center">
-          <h3 class="card-title">Pick your crystals, as many times as you dare!</h3>
+      <div class="col-sm-12 text-center">
+          <p class="biggerText" id="computer-pick">???</p>
+      </div>
+  
+      <div class="col-sm-12 text-center">
+           <p class="title">Pick your crystals, as many times as you dare!</p>
         </div>
-        <div class="card-body text-center" id="jewelBox">
+        <div class="col-sm-12 text-center" id="jewelBox">
           <!-- buttons will populate here -->
         </div>
+  
+      <div class="row">
+        <div class="col text-center">
+          <p class="title">Crystals clicked so far</p>
+        </div>
+        <div class="col text-center">
+          <p class="title">Crystal Total</p>
+        </div>
       </div>
 
-      <div class="card text-center">
-        <div class="card-header">
-          <h3 class="card-title">Crystals clicked so far</h3>
+      <div class="row">
+        <div class="col text-center">
+            <span class="biggerText" id="choicesToAdd"></span>
         </div>
-        <div class="card-body text-center">
-          <span id="choicesToAdd"></span>
-        </div>
-      </div>
-      <div class="card text-center">
-        <div class="card-header">
-          <h3 class="card-title">Crystal Total</h3>
-        </div>
-        <div class="card-body text-center">
-          <span id="totalAdded"></span>
+        <div class="col text-center">
+            <span class="biggerText" id="totalAdded"></span>
         </div>
       </div>
+         
+        <div class="row">
+          <div class="col text-center">
+            <p class="title">Wins</p>
+          </div>
+          <div class="col text-center">
+            <p class="title">Losses</p>
+          </div>
+        </div>
  
-  </div>
+        <div class="row">
+            <div class="col text-center">
+              <span class="biggerText" id="wins"></span>
+            </div>
+            <div class="col text-center">
+              <span class="biggerText" id="losses"></span>
+            </div>
+          </div>
+        </div>
 
   <!-- Added link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

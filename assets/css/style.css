@@ -7,3 +7,19 @@
 html {
     zoom: 95%;
 }
+
+#myContainer {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.title, h1, h2{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Dancing Script;
+}
+
+.biggerText {
+    font-size: 30px;
+}

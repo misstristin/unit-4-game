@@ -26,6 +26,8 @@
     var button, jewelVal, jewelClicked;
     var clicked = [];
     var total;
+    var losses = 0;
+    var wins = 0;
  
 
     // append jewels and give random values
@@ -61,6 +63,8 @@
     if (total == ranNum){
       alert(ranNum +'! You did it! Score equals computer!');
       total = 0;
+      wins++;
+      $('#wins').text(wins);
       ranNum = Math.ceil((Math.random()*100)+19);
       $('#computer-pick').text(ranNum);
       $('#totalAdded').text(total);
@@ -81,6 +85,8 @@
     } else if (total > ranNum){
       alert(total +'... Sorry, you overdid it a bit. Try again.');
       total = 0;
+      losses++;
+      $('#losses').text(losses);
       ranNum = Math.ceil((Math.random()*100)+19);
       $('#computer-pick').text(ranNum);
       $('#totalAdded').text(total);
